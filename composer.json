@@ -1,0 +1,22 @@
+{
+    "name": "doyevaristo/csv",
+    "description": "Simple object orient CSV manipulator",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^5.6"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rolando Evaristo",
+            "email": "doy.evaristo@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Doyevaristo\\": "src"
+        }
+    },
+    "require": {}
+}
