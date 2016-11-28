@@ -32,7 +32,9 @@ class CSVReader{
     }
 
     private function updateDataKeys(){
+
         $newDatarows=array();
+        $newDatarow=array();
 
         foreach($this->datarows as $index=>$datarow){
             foreach($this->headers as $field=>$key){
@@ -42,7 +44,6 @@ class CSVReader{
         }
 
         $this->datarows = $newDatarows;
-
 
         return $this;
 
@@ -73,7 +74,7 @@ class CSVReader{
         $this->filepath = $filepath;
 
         if($this->autoDetectDelimeter){
-            $this->separator = $this->_detectDelimeter();
+            $this->separator = $this->_detectDelimiter();
             $this->enclosure = $this->_detectEnclosure();
         }
 
@@ -86,7 +87,7 @@ class CSVReader{
         if(!is_null($enclosure)){ $this->setEnclosure($enclosure); }
         if(!is_null($filepath)){ $this->file($filepath); }
 
-        $this->_geFileData($this->filepath);
+        $this->_geFileData();
 
         return $this;
     }
@@ -113,7 +114,7 @@ class CSVReader{
         return $this;
     }
 
-    private function _detectDelimeter()
+    private function _detectDelimiter()
     {
         $delimiters = array(
             ';' => 0,
